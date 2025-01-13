@@ -10,7 +10,7 @@ const Clouds = () => {
   );
 };
 
-const styles = {
+const styles: { [key: string]: React.CSSProperties } = {
   cloudContainer: {
     position: "fixed",
     top: 0,

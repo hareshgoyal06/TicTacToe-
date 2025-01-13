@@ -29,7 +29,7 @@ export default function TicTacToe() {
       setWinner(gameWinner);
       setScore((prevScore) => ({
         ...prevScore,
-        [gameWinner]: prevScore[gameWinner] + 1,
+        [gameWinner as keyof typeof score]: prevScore[gameWinner as keyof typeof score] + 1,
       }));
     } else if (newBoard.every((cell) => cell !== null)) {
       setWinner("Tie");
@@ -115,7 +115,7 @@ function calculateWinner(squares: any[]) {
   return null;
 }
 
-const styles = {
+const styles: { [key: string]: React.CSSProperties } =  {
   appContainer: {
     background: colors.background,
     height: "100vh",
