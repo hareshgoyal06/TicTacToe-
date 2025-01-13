@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Clouds from "./components/Clouds";
 
 const colors = {
   background: "linear-gradient(135deg, #e8bcd5, #c6a7c9)",
@@ -43,6 +44,7 @@ export default function TicTacToe() {
 
   return (
     <div style={styles.appContainer}>
+      <Clouds />
       <h1 style={styles.title}>Tic Tac Toe</h1>
       <div style={styles.scoreBoard}>
         <p style={styles.scoreText}>Player X: {score.X}</p>
@@ -64,6 +66,7 @@ export default function TicTacToe() {
               ...styles.cell,
               color: cell === "X" ? colors.playerX : colors.playerO,
             }}
+            className="grid-cell"
           >
             {cell}
           </button>
@@ -155,7 +158,7 @@ const styles = {
     borderRadius: "12px",
     fontSize: "36px",
     cursor: "pointer",
-    transition: "transform 0.2s, box-shadow 0.2s",
+    transition: "transform 0.2s ease, box-shadow 0.2s ease",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",

@@ -24,3 +24,8 @@ body {
 title {
   font-size: x-large;
 }
+
+.grid-cell:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
